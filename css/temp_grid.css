@@ -1,0 +1,130 @@
+body {
+    margin: 0px;
+}
+
+/*Hide scrollbar for IE, Edge and Firefox*/
+html {
+    -ms-overflow-style: none;/*Internet Explorer and Edge*/
+    scrollbar-width: none;/*Firefox*/
+}
+
+/*Hide scrollbar for Chrome, Safari and Opera GX*/
+html::-webkit-scrollbar {
+    display: none;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 30vw 1fr 30vw;
+    grid-template-rows: 20vh 60vh 60vh 60vh 80vh 10vh;
+    grid-template-areas:
+    'hed hed hed'
+    'pic1 art1 art1'
+    'art2 art2 pic2'
+    'pic3 art3 art3'
+    'sec sec sec'
+    'fot fot fot';
+}
+
+@media screen and (max-width: 500px) {
+    #grid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 20vh 60vh 10vh 60vh 10vh 60vh 10vh 80vh 10vh;
+        grid-template-areas:
+        'hed'
+        'pic1'
+        'art1'
+        'pic2'
+        'art2'
+        'pic3'
+        'art3'
+        'sec'
+        'fot';
+    }
+}
+
+#hed {
+    grid-area: hed;
+}
+
+#pic1 {
+    grid-area: pic1;
+}
+
+#art1 {
+    grid-area: art1;
+    background-image: url(../img/underwater_background.jpg);
+    background-size: cover;
+    background-position-y: center;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#pic2 {
+    grid-area: pic2;
+}
+
+#art2 {
+    grid-area: art2;
+    background-image: url(../img/forest_landscape.jpg);
+    background-size: cover;
+    background-position-y: center;
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#pic3 {
+    grid-area: pic3;
+}
+
+#art3 {
+    grid-area: art3;
+    background-image: url(../img/housing2.jpg);
+    background-size: cover;
+    background-position-y: center;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.main_article {
+    background-color: white;
+    height: calc(80% - 40px);
+    width: calc(85% - 40px);
+    margin: 3vw;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#sec {
+    grid-area: sec;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+
+    width: auto;
+    background-color: darkgray;
+}
+
+#sec article {
+    height: 90%;
+    min-width: 17.6vw;
+    margin: 1vw;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+
+#sec article img {
+    height: 50%;
+}
+
+#fot {
+    grid-area: fot;
+}
