@@ -13,9 +13,13 @@ html::-webkit-scrollbar {
     display: none;
 }
 
+img {
+    width: 100%;
+}
+
 h1 {
-    font-size: xx-large;
-    font-weight: 800;
+    font-size: 5vw;
+    font-weight: 3vw;
 }
 
 h2 {

@@ -1,22 +1,43 @@
 #sec {
     grid-area: sec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: url(../img/home.jpg) no-repeat;    
     background-size: cover;
     background-position: 0px -150px;
+    
+    border: 0px;
+    border-bottom: 3vh;
+    border-color: rgb(191, 128, 64);
+    border-style: solid;
 }
 
-#sec article {
-    width: fit-content;
-    height: fit-content;
-    padding: 25px;
-
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 25px;
+#sec h1, #sec h2 {
+    color: whitesmoke;
+    margin: 10px;
 }
 
 #ar1 {
     grid-area: ar1;
     padding: 20px;
+}
+
+#ar1 section {
+    display: flex;
+    height: 40vh;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+#hotel_reception_img {
+    width: 25%;
+}
+
+#hotel_restaurante_img {
+    width: 73%;
 }
 
 #ar2 {
@@ -26,14 +47,22 @@
 
 #asi {
     grid-area: asi;
+    
+    border-color: rgb(191, 128, 64);
+    border-width: 1.5vh;
+    border-style: solid;
+    border-radius: 1.5vh;
+
+    margin: 6vh 6vh 6vh 0px;
+    background-color: rgb(223, 191, 159);
 }
 
 
 @media screen and (min-width: 501px) {
     #grid {
         display: grid;
-        grid-template-columns: 30vw 1fr 30vw;
-        grid-template-rows: 15vh 85vh 40vh 40vh;
+        grid-template-columns: 30vw 1fr 35vw;
+        grid-template-rows: 15vh 88vh auto auto;
         grid-template-areas:
         'hed nav nav'
         'sec sec sec'
