@@ -1,0 +1,157 @@
+#grid {
+    display: grid;
+    grid-template-columns: 30vw 1fr 30vw;
+    grid-template-rows: 15vh 60vh 60vh 60vh 80vh 10vh;
+    grid-template-areas:
+    'hed nav nav'
+    'pic1 art1 art1'
+    'art2 art2 pic2'
+    'pic3 art3 art3'
+    'sec sec sec'
+    'fot fot fot';
+}
+
+#pic1 {
+    grid-area: pic1;
+}
+
+#art1 {
+    grid-area: art1;
+    background-image: url(../img/coral_reef.jpg);
+    background-size: cover;
+    background-position-y: center;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#pic2 {
+    grid-area: pic2;
+}
+
+#art2 {
+    grid-area: art2;
+    background-image: url(../img/forest_landscape.jpg);
+    background-size: cover;
+    background-position-y: center;
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#pic3 {
+    grid-area: pic3;
+}
+
+#art3 {
+    grid-area: art3;
+    background-image: url(../img/housing2.jpg);
+    background-size: cover;
+    background-position-y: center;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.main_article {
+    background-color: white;
+    height: calc(80% - 40px);
+    width: calc(85% - 40px);
+    margin: 3vw;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.picture_div {
+    position: relative;
+    overflow: hidden;
+}
+
+.subject_pictures {
+    height: 100%;
+    display: flex;
+    justify-self: center;
+}
+
+/*.img_shadow {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#art1, #pic2 .img_shadow, #art3 {
+    box-shadow: 5px 5px 10px black inset, 0px -5px 10px black inset;
+}
+
+#pic1 .img_shadow, #art2, #pic3 .img_shadow {
+    box-shadow: 0px 5px 10px black inset, -5px -5px 10px black inset;
+}*/
+
+#sec {
+    grid-area: sec;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+
+    width: auto;
+    background-color: darkgray;
+}
+
+#sec article {
+    height: 90%;
+    min-width: 17.6vw;
+    margin: 1vw;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+
+#sec article img {
+    height: 50%;
+}
+
+#fot {
+    grid-area: fot;
+}
+
+@media screen and (max-width: 500px) {
+    #grid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 10vh 40vh auto 40vh auto 40vh auto 80vh 10vh;
+        grid-template-areas:
+        'hed'
+        'pic1'
+        'art1'
+        'pic2'
+        'art2'
+        'pic3'
+        'art3'
+        'sec'
+        'fot';
+    }
+
+    .main_article {
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+        margin: 0px;
+        border-radius: 0px;
+    }
+
+    #sec article {
+        height: 90%;
+        min-width: 30vw;
+        margin: 1vw;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: white;
+    }
+}

@@ -18,19 +18,159 @@ img {
 }
 
 h1 {
-    font-size: 5vw;
-    font-weight: 3vw;
+    font-weight: 800;
 }
 
 h2 {
-    font-size: x-large;
     font-weight: 600;
+}
+
+a {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    color: black;
+    text-decoration: underline 1px;
+}
+
+a:hover {
+    text-shadow: 0px 0px 25px black;
+}
+
+button {
+    color: black;
+    border: 0px;
+    border-radius: 0px;
+    background-color: transparent;
 }
 
 #hed {
     grid-area: hed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 20px;
+    background-color: rgb(223, 191, 159);
+}
+
+#hed a {
+    text-decoration: none;
+}
+
+#hed a:hover {
+    text-shadow: none;
 }
 
 #nav {
-    grid-area: nav;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background-color: rgb(223, 191, 159);
+}
+
+nav a:hover {
+    /* text-shadow: 0px 0px 35px black; */
+    font-size: +10px;
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+
+    #hed {
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+        
+        border-width: 0px;
+        border-bottom: 5px;
+        border-style: solid;
+        border-color: rgb(191, 128, 64);
+    }
+
+    #nav {
+        position: fixed;
+        top: calc(5vh - 5px);
+        z-index: 1;
+        width: 100vw;
+        height: 5vh;
+        
+        border-width: 0px;
+        border-bottom: 5px;
+        border-style: solid;
+        border-color: rgb(191, 128, 64);
+
+        transition: top 0.3s;
+    }
+
+    #nav[open] {
+        top: 10vh;
+    }
+
+    #nav_button {
+        position: absolute;
+        left: 15px;
+        height: 32px;
+        width: 32px;
+        padding: 0px;
+    }
+
+    #nav_button span {
+        font-size: 32px;
+    }
+
+    #icon_1 {
+        display: inherit;
+    }
+
+    #icon_1[nav_open] {
+        display: none;
+    }
+
+    #icon_2 {
+        display: none;
+    }
+
+    #icon_2[nav_open] {
+        display: inherit;
+    }
+}
+
+@media screen and (min-width: 501px) {
+    h1 {
+        font-size: 45px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    #hed {
+        border-width: 0px;
+        border-bottom: 10px;
+        border-style: solid;
+        border-color: rgb(191, 128, 64);
+    }
+
+    #nav {
+        grid-area: nav;
+        padding: 20px;
+
+        border-width: 0px;
+        border-bottom: 10px;
+        border-left: 5px;
+        border-style: solid;
+        border-color: rgb(191, 128, 64);
+    }
+
+    #nav_button, #shadow {
+        display: none;
+    }
 }
