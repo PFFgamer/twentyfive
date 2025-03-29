@@ -1,3 +1,44 @@
+#sec1 {
+    grid-area: sec1;
+    overflow-y: hidden;
+    
+    border-width: 0px;
+    border-bottom: 5px;
+    border-color: rgb(223, 191, 159);
+    border-style: solid;
+}
+
+#section_button {
+    display: block;
+    border: 1px black solid;
+}
+
+#sec2 {
+    grid-area: sec2;
+}
+
+#asi {
+    position: fixed;
+    width: 30vw;
+    height: 85vh;
+    top: 15vh;
+    left: 0vw;
+    background-color: aquamarine;
+    transition: all 0.3s;
+}
+
+#asi[hidden] {
+    display: block;
+    left: -30vw;
+}
+
+#aside_button {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    border: 1px black solid;
+}
+
 @media screen and (max-width: 500px) {
     #grid {
         display: grid;
@@ -13,8 +54,21 @@
     #grid {
         display: grid;
         grid-template-columns: 30vw 1fr;
-        grid-template-rows: 15vh;
+        grid-template-rows: 15vh 30vh 1fr;
         grid-template-areas:
-        'hed nav';
+        'hed nav'
+        '. sec1'
+        '. sec2';
+    }
+
+    #grid[aside_hidden] {
+        grid-template-areas:
+        'hed nav'
+        'sec1 sec1'
+        'sec2 sec2';
+    }
+
+    #grid[section_hidden] {
+        grid-template-rows: 15vh 20px 1fr;
     }
 }

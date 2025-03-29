@@ -11,12 +11,31 @@ function ShowNav() {
 // Controls the aside for index.html
 if (window.location.pathname.split("/").pop() === "index.html") {
     const shadow = document.getElementById("shadow");
-    document.getElementById("aside_button").addEventListener("click", ShowIndexAside);
-    shadow.addEventListener("click", ShowIndexAside);
+    document.getElementById("aside_button").addEventListener("click", ShowAside);
+    shadow.addEventListener("click", ShowAside);
 
-    function ShowIndexAside() {
+    function ShowAside() {
         document.getElementById("i_asi").toggleAttribute("open");
         shadow.toggleAttribute("open");
+    }
+}
+
+// Controls the aside for booking.html
+if (window.location.pathname.split("/").pop() === "booking.html") {
+    document.getElementById("aside_button").addEventListener("click", HideAside);
+
+    function HideAside() {
+        document.getElementById("asi").toggleAttribute("hidden");
+        document.getElementById("grid").toggleAttribute("aside_hidden");
+    }
+}
+
+// Controls section 1 for booking.html
+if (window.location.pathname.split("/").pop() === "booking.html") {
+    document.getElementById("section_button").addEventListener("click", HideSection);
+
+    function HideSection() {
+        document.getElementById("grid").toggleAttribute("section_hidden");
     }
 }
 
