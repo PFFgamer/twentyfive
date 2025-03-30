@@ -1,6 +1,6 @@
-body {
-    margin: 0px;
-}
+/*---------------------------------------------------------------*/
+
+/*  Koden är tagen från W3 schools (https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp)*/
 
 /*Hide scrollbar for IE, Edge and Firefox*/
 html {
@@ -13,6 +13,12 @@ html::-webkit-scrollbar {
     display: none;
 }
 
+/*----------------------------------------------------------------*/
+
+body {
+    margin: 0px;
+}
+
 img {
     width: 100%;
 }
@@ -23,6 +29,19 @@ h1 {
 
 h2 {
     font-weight: 600;
+}
+
+h3 {
+    font-size: 21px;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p, li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
 }
 
 a {
@@ -46,7 +65,10 @@ button {
 }
 
 #hed {
-    grid-area: hed;
+    position: fixed;
+    z-index: 2;
+    box-sizing: border-box;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,6 +82,10 @@ button {
 }
 
 #nav {
+    position: fixed;
+    z-index: 1;
+    box-sizing: border-box;
+
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -69,17 +95,16 @@ button {
 
 @media screen and (max-width: 500px) {
     h1 {
-        font-size: 25px;
+        font-size: 21px;
     }
 
     h2 {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     #hed {
-        position: sticky;
-        top: 0px;
-        z-index: 2;
+        height: 10vh;
+        width: 100vw;
         
         border-width: 0px;
         border-bottom: 5px;
@@ -88,9 +113,7 @@ button {
     }
 
     #nav {
-        position: fixed;
         top: calc(5vh - 5px);
-        z-index: 1;
         width: 100vw;
         height: 5vh;
         
@@ -137,23 +160,27 @@ button {
 
 @media screen and (min-width: 501px) {
     h1 {
-        font-size: 45px;
+        font-size: 34px;
     }
 
     h2 {
-        font-size: 30px;
+        font-size: 21px;
     }
 
     #hed {
+        height: 10vh;
+        width: 30vw;
+
         border-width: 0px;
         border-bottom: 10px;
-        border-right: 5px;
         border-style: solid;
         border-color: rgb(191, 128, 64);
     }
 
     #nav {
-        grid-area: nav;
+        height: 10vh;
+        width: 70vw;
+        left: 30vw;
         padding: 20px;
 
         border-width: 0px;

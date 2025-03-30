@@ -1,52 +1,98 @@
-#sec1 {
+/* #sec1 {
     grid-area: sec1;
-    overflow-y: hidden;
+    display: flex;
+    overflow: hidden;
     
     border-width: 0px;
     border-bottom: 5px;
-    border-color: rgb(223, 191, 159);
+    border-color: rgb(191, 128, 64);
     border-style: solid;
-}
-
-#section_button {
-    display: block;
-    border: 1px black solid;
-}
+} */
 
 #sec2 {
     grid-area: sec2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
-#asi {
-    position: fixed;
-    width: 30vw;
-    height: 85vh;
-    top: 15vh;
-    left: 0vw;
-    background-color: aquamarine;
-    transition: all 0.3s;
+#sec2 article {
+    box-sizing: border-box;
+    overflow: hidden;
+
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-#asi[hidden] {
-    display: block;
-    left: -30vw;
+#sec2 article img {
+    width: auto;
+    display: flex;
+    justify-self: center;
+
+    border-width: 0px;
+    border-bottom: 3px;
+    border-color: rgb(191, 128, 64);
+    border-style: solid;
 }
 
-#aside_button {
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    border: 1px black solid;
+#sec2 article ul li {
+    margin-bottom: 10px;
+}
+
+#sec2 article h3 {
+    margin-left: 20px;
 }
 
 @media screen and (max-width: 500px) {
     #grid {
         display: grid;
         grid-template-columns: 100vw;
-        grid-template-rows: 10vh 100vh;
+        grid-template-rows: 10vh /*40vh*/ auto auto;
         grid-template-areas:
-        'hed'
-        '.';
+        '.'
+        /* 'sec1' */
+        'asi'
+        'sec2';
+    }
+
+    /* #sec1 {
+        flex-direction: column;
+    }
+
+    #sec1 img {
+        width: auto;
+        height: 50%;
+    } */
+
+    #sec2 article {
+        width: 40vw;
+        height: 40vh;
+        margin: 5vw;
+    }
+
+    #sec2 article img {
+        height: 35%;
+    }
+
+    #sec2 article ul {
+        padding-left: 25px;
+    }
+
+    #asi {
+        grid-area: asi;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 40px 0px 20px;
+        background-color: rgb(223, 191, 159);
+
+        border-width: 0px;
+        border-bottom: 5px;
+        border-color: rgb(191, 128, 64);
+        border-style: solid;
+    }
+
+    #aside_button {
+        display: none;
     }
 }
 
@@ -54,21 +100,80 @@
     #grid {
         display: grid;
         grid-template-columns: 30vw 1fr;
-        grid-template-rows: 15vh 30vh 1fr;
+        grid-template-rows: 10vh /*30vh*/ auto;
         grid-template-areas:
-        'hed nav'
-        '. sec1'
+        '. .'
+        /* '. sec1' */
         '. sec2';
     }
 
     #grid[aside_hidden] {
         grid-template-areas:
-        'hed nav'
-        'sec1 sec1'
+        '. .'
+        /* 'sec1 sec1' */
         'sec2 sec2';
     }
 
-    #grid[section_hidden] {
-        grid-template-rows: 15vh 20px 1fr;
+    /* #sec1 img {
+        width: 50%;
+        height: auto;
+    } */
+
+    #sec2 article {
+        width: 20vw;
+        height: 60vh;
+        margin: 20px;
+    }
+
+    #sec2 article:hover {
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+    }
+
+    #sec2 article img {
+        height: 50%;
+    }
+
+    #asi {
+        position: fixed;
+        box-sizing: border-box;
+        width: 30vw;
+        height: 90vh;
+        top: 10vh;
+        left: 0vw;
+
+        padding: 20px;
+        background-color: rgb(223, 191, 159);
+        transition: all 0.3s;
+
+        border-width: 0px;
+        border-right: 5px;
+        border-color:rgb(191, 128, 64);
+        border-style: solid;
+    }
+
+    #asi[hidden] {
+        display: block;
+        left: -30vw;
+    }
+
+    #aside_button {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+    
+        box-sizing: content-box;
+        height: 24px;
+        width: 18px;
+    
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+        background-color: rgb(223, 191, 159);
+    
+        border-width: 5px;
+        border-left: 0px;
+        border-color: rgb(191, 128, 64);
+        border-style: solid;
     }
 }

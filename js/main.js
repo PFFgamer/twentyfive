@@ -1,3 +1,9 @@
+/*
+    window.location.pathname.split("/").pop() används för att ta reda på vilken html sida det är,
+    koden är en lite modifierad version av kod från stack overflow
+    https://stackoverflow.com/questions/16611497/how-can-i-get-the-name-of-an-html-page-in-javascript
+*/
+
 // Controls mobile nav
 document.getElementById("nav_button").addEventListener("click", ShowNav);
 
@@ -15,45 +21,32 @@ if (window.location.pathname.split("/").pop() === "index.html") {
     shadow.addEventListener("click", ShowAside);
 
     function ShowAside() {
-        document.getElementById("i_asi").toggleAttribute("open");
+        document.getElementById("asi").toggleAttribute("open");
         shadow.toggleAttribute("open");
     }
 }
 
 // Controls the aside for booking.html
 if (window.location.pathname.split("/").pop() === "booking.html") {
+    let open = true;
+    const icon = document.querySelector("#aside_button span");
+
     document.getElementById("aside_button").addEventListener("click", HideAside);
 
     function HideAside() {
         document.getElementById("asi").toggleAttribute("hidden");
         document.getElementById("grid").toggleAttribute("aside_hidden");
-    }
-}
-
-// Controls section 1 for booking.html
-if (window.location.pathname.split("/").pop() === "booking.html") {
-    document.getElementById("section_button").addEventListener("click", HideSection);
-
-    function HideSection() {
-        document.getElementById("grid").toggleAttribute("section_hidden");
+        if (open) {
+            open = false;
+            icon.textContent = "keyboard_arrow_right";
+        } else {
+            open = true;
+            icon.textContent = "keyboard_arrow_left";
+        }
     }
 }
 
 // Controls section for attractions.html
-/*
-    Kommentar för dokumentering
-    1.  jag lyckades få det att fungera genom att flytta hela #sec,
-        var tvungen att definera #sec för flera värden på attribut,
-    2.  upptäckte att min sticky header hade slutat fungera på mobil,
-        upptäckte att den inte fungerade om någon av sakerna gick utanför main,
-        behövde byta lösning på mina articles
-    3.  skapade en array med alla articles, pos samt hur många som skulle ses samtidigt
-        knappar ändrar pos -> värden i array på pos + width blir display: block de andra blir hidden
-        ändrade width när till 1 när man använder mobil -> fungerar på mobil
-        + #sec är 100vw så headern fungerar på mobil
-        + behöver bara definera attribute hidden true och false istället för varje position #sec har
-        - transitions fungerar inte längre, ska försöka fixa om jag har tid (troligtvis inte)
-*/
 if (window.location.pathname.split("/").pop() === "attractions.html") {
     let pos = 0;
     let width = 1;
@@ -73,6 +66,7 @@ if (window.location.pathname.split("/").pop() === "attractions.html") {
     buttonR.addEventListener("click", MoveRight);
 
     function MoveRight() {
+        console.log("hej");
         pos = Math.max(Math.min(pos + 1, maxWidth - width), 0);
         Move();
     }

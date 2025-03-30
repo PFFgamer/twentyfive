@@ -4,7 +4,7 @@
         grid-template-columns: 100vw;
         grid-template-rows: 10vh 100vh;
         grid-template-areas:
-        'hed'
+        '.'
         '.';
     }
 }
@@ -12,9 +12,10 @@
 @media screen and (min-width: 501px) {
     #grid {
         display: grid;
-        grid-template-columns: 30vw 1fr;
-        grid-template-rows: 15vh;
+        grid-template-columns: 100vw;
+        grid-template-rows: 10vh 100vh;
         grid-template-areas:
-        'hed nav';
+        '.'
+        '.';
     }
 }

@@ -87,10 +87,10 @@
     width: auto;
 }
 
-.sec_article a, .sec_article p {
+.sec_article h3, .sec_article p {
     margin-left: 10px;
     margin-right: 10px;
-    margin-block-start: 0px;
+    margin-block-start: 5px;
     margin-block-end: 10px;
 }
 
@@ -105,6 +105,7 @@
     align-items: center;
     padding: 0px;
     font-size: large;
+    border-radius: 50%;
 }
 
 .sec_button[hidden="true"] {
@@ -124,7 +125,7 @@
         grid-template-columns: 100vw;
         grid-template-rows: 10vh auto auto auto auto auto auto 70vh;
         grid-template-areas:
-        'hed'
+        '.'
         'pic1'
         'art1'
         'pic2'
@@ -155,7 +156,6 @@
     .sec_button {
         height: 40px;
         width: 40px;
-        border-radius: 20px;
         bottom: calc(35vh - 20px);
     }
 
@@ -173,9 +173,9 @@
         position: relative;
         display: grid;
         grid-template-columns: 30vw 1fr 30vw;
-        grid-template-rows: 15vh 60vh 60vh 60vh 80vh;
+        grid-template-rows: 10vh 60vh 60vh 60vh 80vh;
         grid-template-areas:
-        'hed nav nav'
+        '. . .'
         'art1 art1 pic1'
         'pic2 art2 art2'
         'art3 art3 pic3'
@@ -218,26 +218,19 @@
     .sec_button {
         height: 30px;
         width: 30px;
-        border-radius: 15px;
         bottom: calc(40vh - 15px);
         transition: all 0.3s;
     }
 
-    .sec_button:hover {
+    .sec_button:hover[hidden="false"] {
         bottom: calc(40vh - 25px);
         height: 50px;
         width: 50px;
-        border-radius: 25px;
         font-size: xx-large;
     }
 
     .sec_button:hover[hidden="true"] {
         cursor: not-allowed;
-        bottom: calc(40vh - 15px);
-        height: 30px;
-        width: 30px;
-        border-radius: 15px;
-        font-size: large;
     }
 
     #atr_button_l {
